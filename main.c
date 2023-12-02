@@ -126,7 +126,6 @@ void taskStart(void*p)
 		
 			REG_PORT_OUT0 |= 1 << 21;
 			scanf("%10s",name);
-			printf("Hello %s\r\n",name);
 			while ((c=fgetc(stdin))!='\n'&& c!=EOF);
 			
 
@@ -134,7 +133,6 @@ void taskStart(void*p)
 			{
 				if(REG_PORT_IN0 & PORT_PA20)
 				{
-					
 					break;
 				}
 				REG_PORT_OUT0 ^= 1 << 21;
